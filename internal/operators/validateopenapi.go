@@ -23,7 +23,7 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 }
 
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
-	schemaFile := "/home/tinnt2/FSOFT/Anew/coraza/APISchema/api.json"
+	schemaFile := "./APISchema/api.json"
 	if s := os.Getenv("SCHEMA_FILE"); s != "" {
 		schemaFile = s
 	}
