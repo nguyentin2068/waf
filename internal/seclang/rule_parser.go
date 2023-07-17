@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
-	actionsmod "github.com/corazawaf/coraza/v3/internal/actions"
+	actionsmod "github.com/nguyentin2068/waf/internal/actions"
 	"github.com/nguyentin2068/waf/internal/corazawaf"
 	"github.com/nguyentin2068/waf/internal/operators"
 	utils "github.com/nguyentin2068/waf/internal/strings"

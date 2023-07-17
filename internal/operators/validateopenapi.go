@@ -11,7 +11,7 @@ import (
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/getkin/kin-openapi/openapi3filter"
 	"github.com/getkin/kin-openapi/routers/gorillamux"
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
 )
 
 type validateOpenAPI struct{}

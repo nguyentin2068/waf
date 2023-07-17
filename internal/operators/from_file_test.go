@@ -10,7 +10,7 @@ import (
 	"testing"
 	"testing/fstest"
 
-	"github.com/corazawaf/coraza/v3/internal/io"
+	"github.com/nguyentin2068/waf/internal/io"
 )
 
 const fileContent = "abc123"

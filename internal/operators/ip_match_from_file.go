@@ -10,7 +10,7 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
 )
 
 func newIPMatchFromFile(options plugintypes.OperatorOptions) (plugintypes.Operator, error) {
