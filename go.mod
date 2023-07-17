@@ -1,4 +1,4 @@
-module github.com/corazawaf/coraza/v3
+module github.com/nguyentin2068/waf
 
 go 1.18
 
