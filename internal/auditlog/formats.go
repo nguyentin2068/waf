@@ -23,9 +23,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
-	utils "github.com/corazawaf/coraza/v3/internal/strings"
-	"github.com/corazawaf/coraza/v3/types"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
+	utils "github.com/nguyentin2068/waf/internal/strings"
+	"github.com/nguyentin2068/waf/types"
 )
 
 func nativeFormatter(al plugintypes.AuditLog) ([]byte, error) {

@@ -7,7 +7,7 @@
 
 package auditlog
 
-import "github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
+import "github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
 
 // noopWriter is used to store logs in a single file
 type noopWriter struct{}
