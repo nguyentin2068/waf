@@ -15,9 +15,9 @@ import (
 
 	"github.com/mccutchen/go-httpbin/v2/httpbin"
 
-	"github.com/corazawaf/coraza/v3"
-	txhttp "github.com/corazawaf/coraza/v3/http"
-	e2e "github.com/corazawaf/coraza/v3/http/e2e/pkg"
+	"github.com/nguyentin2068/waf"
+	txhttp "github.com/nguyentin2068/waf/http"
+	e2e "github.com/nguyentin2068/waf/http/e2e/pkg"
 )
 
 func TestE2e(t *testing.T) {
