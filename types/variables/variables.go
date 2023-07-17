@@ -6,7 +6,7 @@
 package variables
 
 import (
-	"github.com/corazawaf/coraza/v3/internal/variables"
+	"github.com/nguyentin2068/waf/internal/variables"
 )
 
 // This file repeats the same content many times in order to make access
