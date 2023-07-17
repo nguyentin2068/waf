@@ -13,9 +13,9 @@ import (
 	"net/http/httptest"
 	"strings"
 
-	"github.com/corazawaf/coraza/v3"
-	"github.com/corazawaf/coraza/v3/experimental/plugins"
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
+	"github.com/nguyentin2068/waf"
+	"github.com/nguyentin2068/waf/experimental/plugins"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
 )
 
 type urlWriter struct {

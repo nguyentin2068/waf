@@ -4,8 +4,8 @@
 package plugins
 
 import (
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
-	"github.com/corazawaf/coraza/v3/internal/operators"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
+	"github.com/nguyentin2068/waf/internal/operators"
 )
 
 // RegisterOperator registers a new operator

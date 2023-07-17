@@ -6,7 +6,7 @@ package plugins
 import (
 	"github.com/nguyentin2068/validateopenapi"
 
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
 )
 
 func ValidateOpenAPI(name string, validateAPI func() plugintypes.ValidateOpenAPI) {

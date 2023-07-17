@@ -6,7 +6,7 @@ package collection
 import (
 	"regexp"
 
-	"github.com/corazawaf/coraza/v3/types"
+	"github.com/nguyentin2068/waf/types"
 )
 
 // Collection are used to store VARIABLE data

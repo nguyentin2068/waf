@@ -8,13 +8,13 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
 	actionsmod "github.com/corazawaf/coraza/v3/internal/actions"
-	"github.com/corazawaf/coraza/v3/internal/corazawaf"
-	"github.com/corazawaf/coraza/v3/internal/operators"
-	utils "github.com/corazawaf/coraza/v3/internal/strings"
-	"github.com/corazawaf/coraza/v3/types"
-	"github.com/corazawaf/coraza/v3/types/variables"
+	"github.com/nguyentin2068/waf/internal/corazawaf"
+	"github.com/nguyentin2068/waf/internal/operators"
+	utils "github.com/nguyentin2068/waf/internal/strings"
+	"github.com/nguyentin2068/waf/types"
+	"github.com/nguyentin2068/waf/types/variables"
 )
 
 var defaultActionsPhase2 = "phase:2,log,auditlog,pass"

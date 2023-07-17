@@ -6,9 +6,9 @@ package plugins_test
 import (
 	"testing"
 
-	"github.com/corazawaf/coraza/v3/experimental/plugins"
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
-	"github.com/corazawaf/coraza/v3/internal/operators"
+	"github.com/nguyentin2068/waf/experimental/plugins"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
+	"github.com/nguyentin2068/waf/internal/operators"
 )
 
 func TestGetOperator(t *testing.T) {
