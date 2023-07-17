@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/corazawaf/coraza/v3/types"
-	"github.com/corazawaf/coraza/v3/types/variables"
+	"github.com/nguyentin2068/waf/types"
+	"github.com/nguyentin2068/waf/types/variables"
 )
 
 // MatchData works like VariableKey but is used for logging,

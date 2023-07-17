@@ -4,8 +4,8 @@
 package collections
 
 import (
-	"github.com/corazawaf/coraza/v3/collection"
-	"github.com/corazawaf/coraza/v3/types"
+	"github.com/nguyentin2068/waf/collection"
+	"github.com/nguyentin2068/waf/types"
 )
 
 var Noop collection.Collection = &noop{}
