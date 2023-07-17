@@ -12,11 +12,11 @@ import (
 	"sync"
 	"unsafe"
 
-	"github.com/corazawaf/coraza/v3/experimental/plugins/macro"
-	"github.com/corazawaf/coraza/v3/experimental/plugins/plugintypes"
-	"github.com/corazawaf/coraza/v3/internal/corazarules"
-	"github.com/corazawaf/coraza/v3/types"
-	"github.com/corazawaf/coraza/v3/types/variables"
+	"github.com/nguyentin2068/waf/experimental/plugins/macro"
+	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
+	"github.com/nguyentin2068/waf/internal/corazarules"
+	"github.com/nguyentin2068/waf/types"
+	"github.com/nguyentin2068/waf/types/variables"
 )
 
 // ruleActionParams is used as a wrapper to store the action name
