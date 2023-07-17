@@ -4,7 +4,7 @@
 package transformations
 
 import (
-	"github.com/corazawaf/coraza/v3/internal/strings"
+	"github.com/nguyentin2068/waf/internal/strings"
 )
 
 func urlDecode(data string) (string, bool, error) {

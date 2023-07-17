@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	utils "github.com/corazawaf/coraza/v3/internal/strings"
+	utils "github.com/nguyentin2068/waf/internal/strings"
 )
 
 func escapeSeqDecode(input string) (string, bool, error) {
