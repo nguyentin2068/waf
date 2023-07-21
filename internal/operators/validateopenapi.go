@@ -6,6 +6,7 @@ package operators
 import (
 	"net/http"
 	"strings"
+	"fmt"
 
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/getkin/kin-openapi/openapi3filter"
@@ -23,6 +24,7 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
 	schemaFile := "/opt/APISchema/api.json"
+	fmt.Print(value)
 	reqe := strings.Split(value, " ")
 	methd := reqe[0]
 	uri := reqe[1]
