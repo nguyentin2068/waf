@@ -24,7 +24,6 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
 	schemaFile := "/opt/APISchema/api.json"
-	fmt.Print(value)
 	reqe := strings.Split(value, " ")
 	methd := reqe[0]
 	uri := reqe[1]
@@ -46,9 +45,9 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	httpreq := req.Context()
 	// Validate the request
 	if er := openapi3filter.ValidateRequest(httpreq, requestValidationInput); er != nil {
-		return true
+		return false
 	}
-	return false
+	return true
 }
 
 func init() {
