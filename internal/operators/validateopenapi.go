@@ -6,7 +6,6 @@ package operators
 import (
 	"net/http"
 	"strings"
-	"os"
 
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/getkin/kin-openapi/openapi3filter"
@@ -23,10 +22,7 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 }
 
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
-	schemaFile := "./APISchema/api.json"
-	if s := os.Getenv("SCHEMA_FILE"); s != "" {
-		schemaFile = s
-	}
+	schemaFile := "/opt/APISchema/api.json"
 	reqe := strings.Split(value, " ")
 	uri := reqe[1]
 	req, _ := http.NewRequest(http.MethodGet, uri, nil)
