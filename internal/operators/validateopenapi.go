@@ -24,8 +24,9 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
 	schemaFile := "/opt/APISchema/api.json"
 	reqe := strings.Split(value, " ")
+	methd := reqe[0]
 	uri := reqe[1]
-	req, _ := http.NewRequest(http.MethodGet, uri, nil)
+	req, _ := http.NewRequest(methd, uri, nil)
 	// Load the OpenAPI document
 	loader := openapi3.NewLoader()
 	doc, _ := loader.LoadFromFile(schemaFile)
