@@ -4,6 +4,7 @@
 package operators
 
 import (
+	"fmt"
 	"net/http"
 	"strings"
 
@@ -35,7 +36,8 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	// Find the operation (HTTP method + path) that matches the request
 	router, _ := gorillamux.NewRouter(doc)
 	route, pathParams, _ := router.FindRoute(req)
-
+	fmt.Printf(route.Path)
+	fmt.Printf(route.Method)
 	// Create a RequestValidationInput
 	requestValidationInput := &openapi3filter.RequestValidationInput{
 		Request:    req,
