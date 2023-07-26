@@ -32,7 +32,10 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	req, _ := http.NewRequest(methd, uri, nil)
 	// Load the OpenAPI document
 	loader := openapi3.NewLoader()
-	doc, _ := loader.LoadFromFile(schemaFile)
+	doc, err := loader.LoadFromFile(schemaFile)
+	if err != nil {
+		log.Fatal("Error load schema file:", err)
+	}
 
 	// Find the operation (HTTP method + path) that matches the request
 	router, err := gorillamux.NewRouter(doc)
