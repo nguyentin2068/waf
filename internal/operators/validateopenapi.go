@@ -35,6 +35,7 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 }
 
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
+	// schemaFile := "/home/tinnt2/FSOFT/github/waf/APISchema/api.json"
 	schemaFile := "/opt/APISchema/api.json"
 	print(value)
 	reqe := strings.Split(value, " ")
@@ -56,12 +57,7 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	if err != nil {
 		log.Fatal("Error creating router:", err)
 	}
-	route, pathParams, err := router.FindRoute(req)
-	if err != nil {
-		log.Fatal("Load PathParams router error:", err)
-	}
-	fmt.Printf(route.Path)
-	fmt.Printf(route.Method)
+	route, pathParams, _ := router.FindRoute(req)
 	// Create a RequestValidationInput
 	requestValidationInput := &openapi3filter.RequestValidationInput{
 		Request:    req,
