@@ -56,18 +56,19 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	if err != nil {
 		log.Fatal("Error creating router:", err)
 	}
-	route, pathParams, err := router.FindRoute(req) //Create url by finding method+uri+parameter from request
+	// Validate Method, Endpoint from request
+	route, pathParams, err := router.FindRoute(req)
 	if err != nil {
 		return true
 	}
-	// Create a RequestValidationInput
+
 	requestValidationInput := &openapi3filter.RequestValidationInput{
 		Request:    req,
 		PathParams: pathParams,
 		Route:      route,
 	}
 	httpreq := req.Context()
-	// Validate the request
+	// Validate the request Paramester required
 	if er := openapi3filter.ValidateRequest(httpreq, requestValidationInput); er != nil {
 		return true
 	}
