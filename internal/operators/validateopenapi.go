@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"log"
 
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/getkin/kin-openapi/openapi3filter"
@@ -34,8 +35,14 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	doc, _ := loader.LoadFromFile(schemaFile)
 
 	// Find the operation (HTTP method + path) that matches the request
-	router, _ := gorillamux.NewRouter(doc)
-	route, pathParams, _ := router.FindRoute(req)
+	router, err := gorillamux.NewRouter(doc)
+	if err != nil {
+		log.Fatal("Error creating router:", err)
+	}
+	route, pathParams, err := router.FindRoute(req)
+	if err != nil {
+		log.Fatal("Error creating router:", err)
+	}
 	fmt.Printf(route.Path)
 	fmt.Printf(route.Method)
 	// Create a RequestValidationInput
