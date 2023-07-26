@@ -41,7 +41,7 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	}
 	route, pathParams, err := router.FindRoute(req)
 	if err != nil {
-		log.Fatal("Error creating router:", err)
+		log.Fatal("Load PathParams router error:", err)
 	}
 	fmt.Printf(route.Path)
 	fmt.Printf(route.Method)
