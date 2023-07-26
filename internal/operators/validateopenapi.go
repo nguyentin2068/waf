@@ -4,7 +4,6 @@
 package operators
 
 import (
-	"fmt"
 	"net/http"
 	"strings"
 	"log"
