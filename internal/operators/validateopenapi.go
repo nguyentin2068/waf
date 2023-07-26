@@ -34,8 +34,7 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 }
 
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
-	schemaFile := "/home/tinnt2/FSOFT/github/waf/APISchema/api.json"
-	// schemaFile := "/opt/APISchema/api.json"
+	schemaFile := "/opt/APISchema/api.json"
 	print(value)
 	reqe := strings.Split(value, " ")
 	methd :=  getMethod(reqe[0])
