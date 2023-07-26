@@ -7,7 +7,7 @@
     },
     "paths": {
       "/gateway": {
-        "put": {
+        "get": {
           "tags": [
             "HTTP Methods"
           ],
