@@ -14,6 +14,17 @@ import (
 	"github.com/getkin/kin-openapi/routers/gorillamux"
 	"github.com/nguyentin2068/waf/experimental/plugins/plugintypes"
 )
+const (
+	MethodGet     = "GET"
+	MethodHead    = "HEAD"
+	MethodPost    = "POST"
+	MethodPut     = "PUT"
+	MethodPatch   = "PATCH" // RFC 5789
+	MethodDelete  = "DELETE"
+	MethodConnect = "CONNECT"
+	MethodOptions = "OPTIONS"
+	MethodTrace   = "TRACE"
+)
 
 type validateOpenAPI struct{}
 
@@ -27,9 +38,12 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	schemaFile := "/opt/APISchema/api.json"
 	print(value)
 	reqe := strings.Split(value, " ")
-	methd := reqe[0]
+	methd :=  getMethod(reqe[0])
 	uri := reqe[1]
-	req, _ := http.NewRequest(methd, uri, nil)
+	req, err := http.NewRequest(methd, uri, nil)
+	if err != nil {
+		log.Fatal("Error create request:", err)
+	}
 	// Load the OpenAPI document
 	loader := openapi3.NewLoader()
 	doc, err := loader.LoadFromFile(schemaFile)
@@ -64,4 +78,29 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 
 func init() {
 	Register("validateOpenAPI", newValidateOpenAPI)
+}
+
+func getMethod(methodStr string) string {
+	switch methodStr {
+	case "GET":
+		return http.MethodGet
+	case "HEAD":
+		return http.MethodHead
+	case "POST":
+		return http.MethodPost
+	case "PUT":
+		return http.MethodPut
+	case "PATCH":
+		return http.MethodPatch
+	case "DELETE":
+		return http.MethodDelete
+	case "CONNECT":
+		return http.MethodConnect
+	case "OPTIONS":
+		return http.MethodOptions
+	case "TRACE":
+		return http.MethodTrace
+	default:
+		return "" // Return an empty string for an unsupported method
+	}
 }
