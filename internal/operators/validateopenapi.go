@@ -34,7 +34,7 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 }
 
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
-	schemaFile := "/opt/APISchema/api.json"
+	schemaFile := "/etc/coraza-spoa/apischema/api.json"
 	reqe := strings.Split(value, " ")
 	methd :=  getMethod(reqe[0])
 	uri := reqe[1]
