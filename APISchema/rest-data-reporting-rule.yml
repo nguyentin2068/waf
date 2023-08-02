@@ -1,0 +1,2 @@
+SecRule REQUEST_FILENAME "@contains /gateway/rest-data-reporting" "id:103, phase:1,chain,msg:'Invalid request',logdata:%{REMOTE_ADDR},log,auditlog" 
+  SecRule REQUEST_LINE "@validateOpenAPI true"
