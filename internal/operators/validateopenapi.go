@@ -34,7 +34,6 @@ func newValidateOpenAPI(plugintypes.OperatorOptions) (plugintypes.Operator, erro
 }
 
 func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string) bool {
-	schemaFile := "/etc/coraza-spoa/apischema/api.json"
 	reqe := strings.Split(value, " ")
 	methd :=  getMethod(reqe[0])
 	uri := reqe[1]
@@ -44,6 +43,8 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	}
 	// Load the OpenAPI document
 	loader := openapi3.NewLoader()
+	domain := strings.Split(uri,"/")[2]
+	schemaFile := "/etc/coraza-spoa/apischema/"+ domain +".json"
 	doc, err := loader.LoadFromFile(schemaFile)
 	if err != nil {
 		log.Fatal("Error load schema file:", err)
