@@ -48,6 +48,7 @@ func (o *validateOpenAPI) Evaluate(_ plugintypes.TransactionState, value string)
 	doc, err := loader.LoadFromFile(schemaFile)
 	if err != nil {
 		log.Fatal("Error load schema file:", err)
+		return true
 	}
 
 	// Find the operation (HTTP method + path) that matches the request
